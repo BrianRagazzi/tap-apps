@@ -1,0 +1,14 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  annotations:
+    rabbitmq.com/topology-allowed-namespaces: '*'
+  name: rmq-where-for-dinner
+  namespace: default
+spec:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 200m
+    limits:
+      cpu: 200m
