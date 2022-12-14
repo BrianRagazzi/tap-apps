@@ -15,10 +15,10 @@ spec:
   serviceClaims: null
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subPath: where-for-dinner-api-gateway
+    subPath: where-for-dinner/where-for-dinner-api-gateway
 ---
 apiVersion: carto.run/v1alpha1
 kind: Workload
@@ -43,10 +43,10 @@ spec:
       name: rmq-where-for-dinner
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subPath: where-for-dinner-search
+    subPath: where-for-dinner/where-for-dinner-search
 ---
 apiVersion: carto.run/v1alpha1
 kind: Workload
@@ -70,10 +70,10 @@ spec:
       name: rmq-where-for-dinner
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subPath: where-for-dinner-search-proc
+    subPath: where-for-dinner/where-for-dinner-search-proc
 ---
 apiVersion: carto.run/v1alpha1
 kind: Workload
@@ -97,10 +97,10 @@ spec:
       name: rmq-where-for-dinner
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subPath: where-for-dinner-notify
+    subPath: where-for-dinner/where-for-dinner-notify
 ---
 apiVersion: carto.run/v1alpha1
 kind: Workload
@@ -125,10 +125,10 @@ spec:
       name: rmq-where-for-dinner
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subPath: where-for-dinner-availability
+    subPath: where-for-dinner/where-for-dinner-availability
 ---
 apiVersion: carto.run/v1alpha1
 kind: Workload
@@ -147,7 +147,7 @@ spec:
       app.kubernetes.io/part-of: where-for-dinner
   source:
     git:
-      url: <https URL for your generated project's Git repository>
+      url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subPath: where-for-dinner-ui
+    subPath: where-for-dinner/where-for-dinner-ui
