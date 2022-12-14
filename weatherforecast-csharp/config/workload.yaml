@@ -11,4 +11,4 @@ spec:
       url: https://github.com/BrianRagazzi/tap-apps
       ref:
         branch: main
-    subpath: weatherforecast-csharp
+    subPath: weatherforecast-csharp
