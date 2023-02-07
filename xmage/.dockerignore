@@ -5,3 +5,4 @@ buildandtag.sh
 .gitignore
 README.md
 catalog/
+workload.yaml
