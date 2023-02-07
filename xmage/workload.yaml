@@ -1,0 +1,27 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: xmage
+    apps.tanzu.vmware.com/workload-type: server
+  name: xmage
+  namespace: default
+spec:
+  params:
+  - name: dockerfile
+    value: ./Dockerfile
+  - name: docker_build_context
+    value: ./xmage
+  - name: ports
+    value:
+    - name: primary
+      port: 17171
+      containerPort: 17171
+    - name: secondary
+      port: 17179
+      containerPort: 17179
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/BrianRagazzi/tap-apps
