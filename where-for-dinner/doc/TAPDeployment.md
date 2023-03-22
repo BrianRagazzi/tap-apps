@@ -56,14 +56,14 @@ If the application was successfully deployed, you should see a section at the bo
 ```
 Knative Services
 NAME                READY   URL
-where-for-dinner    Ready   http://where-for-dinner.perfect300rock.com
+where-for-dinner    Ready   http://where-for-dinner.tap.brianragazzi.com
 ```
 
 ### Monitor and Verify Installation
 
 You can monitor the quick installation steps from above at any point.
 
-**Verify RabbitMQ Operator Install** 
+**Verify RabbitMQ Operator Install**
 
 Run the following command to verify that the RabbitMQ operator installed successfully:
 
@@ -78,7 +78,7 @@ NAME                                         READY   STATUS    RESTARTS   AGE
 rabbitmq-cluster-operator-6f55c6f5fc-98zrm   1/1     Running   0          30m
 ```
 
-**Verify RabbitMQ Instance Creation** 
+**Verify RabbitMQ Instance Creation**
 
 Run the following command to verify that the RabbitMQ instance was created successfully:
 
@@ -143,7 +143,7 @@ A Spring Cloud Streams binding is a required dependency for Where for Dinner, an
 
 The RabbitMQ Kubernetes operator provides a resource based option for deploying RabbitMQ clusters to a Kubernetes cluster.  It also has the nicety of supporting the Kubernetes [Service Binding Spec](https://github.com/servicebinding/spec).  
 
-There are two options for installing RabbitMQ: 
+There are two options for installing RabbitMQ:
 
 * The open source RabbitMQ and RabbitMQ Toplogy operators
 * The VMware Tanzu� RabbitMQ� for Kubernetes offering.
@@ -160,9 +160,9 @@ If successfully installed, there will be an RabbitMQ cluster operator pod runnin
 
 ##### RabbitMQ Topology Operator
 
-If you choose to use the Knative eventing deployment option, you will also need to deploy the RabbitMQ Topology Operator.  This operator allows for the declarative creation of resources like RabbitMQ exchanges, queues, and bindings.  The topology operator is a dependency of the Knative RabbitMQ source resource.  The RabbitMQ source acts as a bridge between messages emitted by the `where-for-dinner-search` application and the rest of the downstream services. 
+If you choose to use the Knative eventing deployment option, you will also need to deploy the RabbitMQ Topology Operator.  This operator allows for the declarative creation of resources like RabbitMQ exchanges, queues, and bindings.  The topology operator is a dependency of the Knative RabbitMQ source resource.  The RabbitMQ source acts as a bridge between messages emitted by the `where-for-dinner-search` application and the rest of the downstream services.
 
-To install the RabbitMQ Topology operator, run the following command against your cluster. 
+To install the RabbitMQ Topology operator, run the following command against your cluster.
 
 ```
 kubectl apply -f "https://github.com/rabbitmq/messaging-topology-operator/releases/latest/download/messaging-topology-operator-with-certmanager.yaml"
@@ -252,7 +252,7 @@ If the application was successfully deployed, you should see a section at the bo
 ```
 Knative Services
 NAME                READY   URL
-where-for-dinner    Ready   http://where-for-dinner.perfect300rock.com
+where-for-dinner    Ready   http://where-for-dinner.tap.brianragazzi.com
 ```
 
 The application's home screen should look similar to the following (assuming you did not enable security).  If you selected to enable security, the home screen will contain a *Login* button.
@@ -269,7 +269,7 @@ Ex:
 https://github.com/vmware-tanzu/application-accelerator-samples/where-for-dinner/blob/main/catalog/catalog-info.yaml
 ```
 
-**NOTE:** It is highly recommended that you create your own code repository first and then import the catalog from your repository.  You will most likely need update the URLs in the files below to properly import the catalog which contains component API configuration (API Docs). 
+**NOTE:** It is highly recommended that you create your own code repository first and then import the catalog from your repository.  You will most likely need update the URLs in the files below to properly import the catalog which contains component API configuration (API Docs).
 
 To enable API Docs to work correctly with your deployment, you will need to update the API docs URIs in each of the following files by replacing the `$text` element with the URI of your deployment:
 
@@ -294,12 +294,12 @@ tap_gui:
    .
    .
    backend:
-      baseUrl: http://tap-gui.perfect300rock.com
+      baseUrl: http://tap-gui.tap.brianragazzi.com
       cors:
-        origin: http://tap-gui.perfect300rock.com
+        origin: http://tap-gui.tap.brianragazzi.com
       reading:
         allow:
-          - host: 'where-for-dinner.perfect300rock.com'      
+          - host: 'where-for-dinner.tap.brianragazzi.com'      
 ```
 
 You will need to update your TAP install with the updated tap-values file before the CORS change takes effect.
