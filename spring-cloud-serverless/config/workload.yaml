@@ -1,0 +1,19 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: spring-cloud-serverless
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+    app.kubernetes.io/part-of: spring-cloud-serverless
+spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "11"
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/BrianRagazzi/tap-apps
+    subPath: spring-cloud-serverless
