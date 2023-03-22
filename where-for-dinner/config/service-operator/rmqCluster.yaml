@@ -4,7 +4,7 @@ metadata:
   annotations:
     rabbitmq.com/topology-allowed-namespaces: '*'
   name: rmq-where-for-dinner
-  namespace: default
+  namespace: service-instances
 spec:
   replicas: 1
   resources:
