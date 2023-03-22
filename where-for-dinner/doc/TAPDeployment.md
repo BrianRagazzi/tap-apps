@@ -24,7 +24,7 @@ This section provides a fast track installation of the "simplest" configuration 
 * Install Rabbit MQ operator:
 
 ```
-kubectl apply -f "https://github.com/rabbitmq/cluster-operator/releases/download/v1.14.0/cluster-operator.yml"
+kubectl apply  -f "https://github.com/rabbitmq/cluster-operator/releases/download/v1.14.0/cluster-operator.yml"
 ```
 
 * Navigate to your TAP GUI web page and Application Accelerator tab on the left of the screen.  Select the `Choose` button on the `Where for Dinner` Application
