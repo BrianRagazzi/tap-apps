@@ -7,6 +7,29 @@ metadata:
   name: xmage
   namespace: default
 spec:
+  env:
+  - name: XMAGE_DOCKER_MADBOT_ENABLED
+    value: "true"
+  - name: XMAGE_DOCKER_SERVER_ADDRESS
+    value: "xmage.games.ragazzilab.com"
+  - name: XMAGE_DOCKER_PORT
+    value: "17171"
+  - name: XMAGE_DOCKER_SECONDARY_BIND_PORT
+    value: "17179"
+  - name: XMAGE_DOCKER_MAX_SECONDS_IDLE
+    value: "3600"
+  - name: XMAGE_DOCKER_AUTHENTICATION_ACTIVATED
+    value: "false"
+  - name: XMAGE_DOCKER_SERVER_NAME:
+    value: "mage-server"
+  - name: XMAGE_DOCKER_ADMIN_PASSWORD
+    value: "password"
+  - name: XMAGE_DOCKER_SERVER_MSG
+    value: "Running from TAP"
+  - nane:  JAVA_MIN_MEMORY
+    value: "256M"
+  - name: JAVA_MAX_MEMORY
+    value: "4G"
   params:
   - name: dockerfile
     value: ./Dockerfile
