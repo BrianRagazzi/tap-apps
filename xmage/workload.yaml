@@ -3,7 +3,7 @@ kind: Workload
 metadata:
   labels:
     app.kubernetes.io/part-of: xmage
-    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/workload-type: server-lb
   name: xmage
   namespace: default
 spec:
@@ -11,7 +11,7 @@ spec:
   - name: XMAGE_DOCKER_MADBOT_ENABLED
     value: "true"
   - name: XMAGE_DOCKER_SERVER_ADDRESS
-    value: "xmage.games.ragazzilab.com"
+    value: "xmage.lab.brianragazzi.com"
   - name: XMAGE_DOCKER_PORT
     value: "17171"
   - name: XMAGE_DOCKER_SECONDARY_BIND_PORT
@@ -20,13 +20,13 @@ spec:
     value: "3600"
   - name: XMAGE_DOCKER_AUTHENTICATION_ACTIVATED
     value: "false"
-  - name: XMAGE_DOCKER_SERVER_NAME:
+  - name: XMAGE_DOCKER_SERVER_NAME
     value: "mage-server"
   - name: XMAGE_DOCKER_ADMIN_PASSWORD
     value: "password"
   - name: XMAGE_DOCKER_SERVER_MSG
     value: "Running from TAP"
-  - nane:  JAVA_MIN_MEMORY
+  - name:  JAVA_MIN_MEMORY
     value: "256M"
   - name: JAVA_MAX_MEMORY
     value: "4G"
