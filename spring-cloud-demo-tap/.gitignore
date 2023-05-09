@@ -36,3 +36,4 @@ build/
 TODO
 PRIVATE_README.md
 tap/catalog/site/
+generated/
