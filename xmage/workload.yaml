@@ -48,3 +48,4 @@ spec:
       ref:
         branch: main
       url: https://github.com/BrianRagazzi/tap-apps
+    subPath: xmage
