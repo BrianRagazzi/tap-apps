@@ -4,9 +4,9 @@ kind: Workload
 metadata:
   labels:
     app.kubernetes.io/part-of: react-webserver
-    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/has-tests: "false"
     apps.tanzu.vmware.com/workload-type: web
-  name: javascript-frontend-sample
+  name: react-webserver
 spec:
   build:
     env:
