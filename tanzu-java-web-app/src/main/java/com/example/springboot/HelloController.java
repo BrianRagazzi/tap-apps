@@ -8,7 +8,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "Greetings from Iterate Branch Spring Boot + TAP!";
+		return "Greetings from TAP, Iterate Branch!";
 	}
 
 }
