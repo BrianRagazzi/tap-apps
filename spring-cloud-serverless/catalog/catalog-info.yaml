@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: spring-cloud-serverless
-  description: Hello Fun
+  description: soring-cloud-serverless
   tags:
     - app-accelerator
     - java
