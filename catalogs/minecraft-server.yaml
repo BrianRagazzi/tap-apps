@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: minecraft-server
+  description: minecraft
+  tags:
+    - sourceimage
+    - java
+    - server
+    - cloud
+    - tanzu
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=minecraft-server'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
