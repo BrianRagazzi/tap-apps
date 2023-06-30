@@ -7,11 +7,11 @@ metadata:
     - nosql
     - redis
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app=redis-server,tier=cache'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=redis-server'
     'backstage.io/techdocs-ref': dir:.
 spec:
   type: service
   lifecycle: experimental
-  owner: team-a
+  owner: default-team
   system: yelb
   dependsOn: [Component:yelb-db]

@@ -6,5 +6,5 @@ metadata:
   annotations:
     'backstage.io/techdocs-ref': dir:.
 spec:
-  owner: team-a
+  owner: default-team
   domain: cloud-apps

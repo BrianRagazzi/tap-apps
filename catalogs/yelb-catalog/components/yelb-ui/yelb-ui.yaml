@@ -6,7 +6,7 @@ metadata:
   tags:
     - javascript
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app=yelb-ui,tier=frontend'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=yelb-ui'
     'backstage.io/techdocs-ref': dir:.
   links:
     - url: https://yelb-ui.example.com
@@ -15,6 +15,6 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: team-a
+  owner: default-team
   system: yelb
   dependsOn: [Component:yelb-appserver]
