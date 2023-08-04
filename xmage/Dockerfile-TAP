@@ -54,7 +54,7 @@ RUN set -ex && \
     && chmod +x /xmage/mage-server/startServer.sh /xmage/mage-server/dockerStartServer.sh \
     && apk del --purge curl jq \
     && rm -rf xmage.zip /var/cache/apk/* /xmage/mage-server/startMage*.bat \
-    && echo "0.0.0.0 $XMAGE_DOCKER_SERVER_ADDRESS" >> /etc/hosts
+    && echo "0.0.0.0 xmage.lab.brianragzzi.com" >> /etc/hosts
 
 EXPOSE $XMAGE_DOCKER_PORT $XMAGE_DOCKER_SECONDARY_BIND_PORT
 
