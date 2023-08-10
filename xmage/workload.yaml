@@ -4,14 +4,15 @@ metadata:
   labels:
     app.kubernetes.io/part-of: xmage
     apps.tanzu.vmware.com/workload-type: server-lb
+    apps.tanzu.vmware.com/has-tests: "true"
   name: xmage
-  namespace: default
+  namespace: devteam1
 spec:
   env:
   - name: XMAGE_DOCKER_MADBOT_ENABLED
     value: "true"
   - name: XMAGE_DOCKER_SERVER_ADDRESS
-    value: "xmage.lab.brianragazzi.com"
+    value: "xmage-tap.games.ragazzilab.com"
   - name: XMAGE_DOCKER_PORT
     value: "17171"
   - name: XMAGE_DOCKER_SECONDARY_BIND_PORT
@@ -30,7 +31,12 @@ spec:
     value: "256M"
   - name: JAVA_MAX_MEMORY
     value: "4G"
+  #image: harbor.lab.brianragazzi.com/library/xmage@sha256:dbf2f3a8b5f61bdcbd04500117b8c873120a2f4ff09fca6fc2a5fbc19859f18a
   params:
+  - name: scanning_image_policy
+    value: scan-policy-allow-all
+  - name: scanning_source_policy
+    value: scan-policy-allow-all
   - name: dockerfile
     value: ./Dockerfile
   - name: docker_build_context
@@ -43,9 +49,22 @@ spec:
     - name: secondary
       port: 17179
       containerPort: 17179
+  # - name: volumes
+  #   value:
+  #     volumes:
+  #     - name: test-mount
+  #       secret:
+  #         secretName: git-https
+  #     volumeMounts:
+  #     - name: test-mount
+  #       mountPath: /test
+  - name: hostAliases
+    value:
+    - ip: "0.0.0.0"
+      hostnames:
+      - "xmage-tap.games.ragazzilab.com"
   source:
     git:
       ref:
         branch: main
       url: https://github.com/BrianRagazzi/tap-apps
-    subPath: xmage
