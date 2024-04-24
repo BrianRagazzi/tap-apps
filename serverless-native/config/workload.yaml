@@ -1,0 +1,45 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: spring-cloud-serverless
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "false"
+    random.label: "a"
+  name: serverless-native
+  namespace: dev2
+spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "0"
+  env:
+    - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
+      value: "true"
+    - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS
+      value: always
+    - name: MANAGEMENT_ENDPOINTS_WEB_BASE_PATH
+      value: "/actuator"
+    - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+      value: "*"
+    - name: MANAGEMENT_HEALTH_PROBES_ENABLED
+      value: "true"
+    - name: MANAGEMENT_SERVER_PORT
+      value: "8080"
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "17"
+    - name: BP_NATIVE_IMAGE
+      value: false
+    # - name: BP_GRADLE_BUILD_FILE
+    #   value: skip
+    # - name: BP_MAVEN_ACTIVE_PROFILES
+    #   value: "native"
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/BrianRagazzi/tap-apps
+      #url: https://github.com/timosalm/going-serverless
+    subPath: serverless-native
