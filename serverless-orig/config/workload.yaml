@@ -1,0 +1,29 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: serverless
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "false"
+    random.label: "a"
+  name: serverless-orig
+  namespace: dev2
+spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "0"
+  - name: scanning_image_policy
+    value: scan-policy-allow-all
+  - name: scanning_source_policy
+    value: scan-policy-allow-all
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: bypass
+      apps.tanzu.vmware.com/language: other
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/BrianRagazzi/tap-apps
+    subPath: serverless-orig
