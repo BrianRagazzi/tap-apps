@@ -16,7 +16,7 @@ Start the app deployment by running:
 tilt up
 ```
 
-You can hit the spacebar to open the UI in a browser. 
+You can hit the spacebar to open the UI in a browser.
 
 - > If you see an "Update error" message like the one below, then just follow the instructions and allow that context:
     ```
@@ -25,3 +25,11 @@ You can hit the spacebar to open the UI in a browser.
         allow_k8s_contexts('tap-beta2')
     to your Tiltfile. Otherwise, switch k8s contexts and restart Tilt.
     ```
+
+
+## Use with TAS:
+
+### Build it first
+```
+./mvnw clean package -DskipTests
+```

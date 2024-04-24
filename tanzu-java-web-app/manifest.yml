@@ -1,0 +1,6 @@
+---
+applications:
+- name: tjwa
+  memory: 1G
+  random-route: false
+  path: target/demo-0.0.1-SNAPSHOT.jar
